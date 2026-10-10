@@ -1,4 +1,4 @@
-# X Interests Filter
+# Interests Filter for X
 
 Chrome extension. On the x.com home timeline (For you and Following), it hides every post that does not match your interest list.
 

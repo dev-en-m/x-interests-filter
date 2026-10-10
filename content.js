@@ -17,10 +17,10 @@ function run() {
     const cell = tweet.closest('[data-testid="cellInnerDiv"]')
     if (!cell) continue
     // Post text, quoted post text, and author name/handle, so "@someone" works as an interest.
-    const text = [...tweet.querySelectorAll('[data-testid="tweetText"], [data-testid="User-Name"]')]
-      .map(e => e.textContent)
-      .join(' ')
-    if (!on || matches(text)) cell.style.removeProperty('display')
+    const parts = tweet.querySelectorAll('[data-testid="tweetText"], [data-testid="User-Name"]')
+    const text = [...parts].map(e => e.textContent).join(' ')
+    // Neither found = X changed its markup. Show the post so the filter fails open instead of blanking the feed.
+    if (!on || !parts.length || matches(text)) cell.style.removeProperty('display')
     else cell.style.setProperty('display', 'none', 'important')
   }
 }
