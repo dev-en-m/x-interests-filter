@@ -1,0 +1,8 @@
+/* content.js sets .xif-home on <html> while on /home. */
+.xif-home header[role="banner"],
+.xif-home [data-testid="sidebarColumn"] {
+  display: none !important;
+}
+.xif-home main[role="main"] {
+  align-items: center !important;
+}
